@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <title>Профиль</title>
+<link rel="stylesheet" href="style.css">
+<link rel="shortcut icon" href="img/LZ-min.png" type="image/x-icon">
+</head>
+<body>
+  <header>
+    <img id="logo" src="img/LZ1.png" alt="">
+  </header>
+
+  <nav id="navbar">
+      <a href="http://lucky-zlakki.github.io" >Главная</a>
+      <a href="https://lucky-zlakki.github.io/roulette/" >Кейсы</a>
+      <a href="https://lucky-zlakki.github.io/partners/">Спонсоры</a>
+  </nav>
+
+<div class="content">
+<img id="avatar" src="img/avatar.jpg" alt="">
+<div class="info">
+<p id="nick"><mark>Имя:</mark> Guest </p><img id="redact"src="img/redact.png" onclick="nickame()" alt="">
+<p id="balance"><mark>Баланс:</mark> 20000 руб.</p>
+<p id="freespin"><mark>Free Spins:</mark> 10</p>
+</div>
+<div class="stats">
+  <div class="segment">
+<p>Кейсов Открыто</p>
+<h1 id="caseopen">0</h1>
+  </div>
+  <div class="segment">
+<p>Рублей Потрачено</p>
+<h1 id="spend">0</h1>
+  </div>
+<div class="segment">
+<p>Рублей Получено</p>
+<h1 id="get">0</h1>
+</div>
+</div>
+</div>
+
+<footer><div class="contacts" id="web">
+<a href="https://vk.com/zlaks_king"><img src="img/vk.png" alt=""> </a>
+<a href="https://twitter.com/LZlaki"><img src="img/tw.png" alt=""> </a>
+<a href="https://facebook.com/Lucky-Zlaki-2319062351694644/"><img src="img/fb.png" alt=""> </a>
+<a href="mail.html"><img src="img/ml.png" alt=""> </a>
+</div>
+<div class="contacts" id="sites">
+<a href="http://lz-old.github.io"><img src="img/LZ-old.png" alt=""></a>
+<a href="https://pucfoundation.github.io"><img src="img/puc.png" alt=""></a>
+</div>
+<div class="cop">
+<p>© 20018 – 2019, Lucky-zlaki .  Все права защищены и принадлежат правообладателям.
+</p>
+</div>
+ </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+
+
+
+
+
+
+
+
+
+
+var nick = localStorage["Nickname"];
+document.getElementById('nick').innerHTML ="<mark>Имя: </mark>"+nick ;
+function nickame(){
+localStorage["Nickname"] = prompt("Введите ваше имя: ");
+nick = localStorage["Nickname"];
+document.getElementById('nick').innerHTML = "<mark>Имя: </mark>"+nick ;
+}
+var balance = Number(localStorage["Balance"]);
+if (isNaN(balance)==true) {
+localStorage["Balance"] = 0;
+balance = Number(localStorage["Balance"]);
+}
+balance = Number(localStorage["Balance"]) ;
+document.getElementById('balance').innerHTML = "<mark>Баланс: </mark>"+ balance +" руб.";
+var fs=Number(localStorage["FreeSpins"]);
+if (isNaN(fs)==true) {
+localStorage["FreeSpins"] = 5;
+fs = Number(localStorage["FreeSpins"]);
+}
+document.getElementById('freespin').innerHTML = "<mark>Free Spins:</mark> "+ fs ;
+document.getElementById('caseopen').innerHTML = Number(localStorage["Case"])
+document.getElementById('spend').innerHTML = Number(localStorage["Menus"])
+document.getElementById('get').innerHTML = Number(localStorage["Plus"])
+</script>
+
+</body>
+</html>
